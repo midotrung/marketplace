@@ -20,6 +20,7 @@ import { tileReducer as tile } from './tile/reducer'
 import { uiReducer as ui } from './ui/reducer'
 import { collectionReducer as collection } from './collection/reducer'
 import { storeReducer as store } from './store/reducer'
+import { identityReducer as identity } from './identity/reducer'
 
 export const createRootReducer = (history: History) =>
   combineReducers({
@@ -41,7 +42,8 @@ export const createRootReducer = (history: History) =>
     wallet,
     router: connectRouter(history),
     collection,
-    store
+    store,
+    identity
   })
 
 export type RootState = ReturnType<ReturnType<typeof createRootReducer>>
